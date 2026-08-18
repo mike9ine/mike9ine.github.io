@@ -200,6 +200,43 @@ header{
 .feature .body:last-child{ margin-bottom:0; }
 .feature .body strong{ color:var(--ink); font-weight:600; }
 
+/* ---------- event list ---------- */
+.events{ border-top:1px solid var(--line); }
+.event{
+  display:grid;
+  grid-template-columns:88px minmax(0,1fr);
+  gap:4px 24px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  align-items:start;
+}
+.event .size{
+  font-family:"Doto",ui-monospace,monospace;
+  font-weight:800;
+  font-size:1.7rem;
+  line-height:1;
+  color:var(--red);
+  font-variant-numeric:tabular-nums;
+}
+.event h3{
+  margin:0 0 4px;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:-.01em;
+}
+.event p{
+  font-size:.92rem;
+  line-height:1.55;
+  color:var(--dim);
+}
+.event a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
+.event a:hover,.event a:focus-visible{ color:var(--red); border-color:var(--red); }
+
+@media (max-width:560px){
+  .event{ grid-template-columns:1fr; gap:6px; }
+}
+
 /* ---------- spec sheet ---------- */
 .specs{
   border-top:1px solid var(--line);
@@ -413,21 +450,53 @@ footer{
   <section class="feature">
     <div class="sec-head">
       <p class="eyebrow">The work this role is actually about</p>
-      <h2>Not On The Guestlist.</h2>
+      <h2>1,700 people. Four events. No playbook.</h2>
     </div>
-    <p class="line">During fashion week the industry checks names at the door. We opened ours.</p>
-    <p class="body">
-      A recurring open-access format of community runs and pop-up showrooms, staged
-      <strong>during major fashion weeks including Paris</strong>, with Salty Sports Club. Local
-      food, music, an apparel showcase. No invitation and no list. A few hundred people per
-      activation, run city after city.
-    </p>
-    <p class="body">
-      The repeatability is the part that matters here. It was a format, not a one-off, which is the
-      difference between having run an event and having built a program. The same calendar carried
-      pop-ups, retail activations, launch parties, warehouse block parties, screen-printing sessions
-      and platform launch keynotes. I owned <strong>scope, budget, vendors, on-site setup and
-      breakdown, and the post-mortem</strong>, because there was nobody else to hand it to.
+    <p class="line">Every one of them built from nothing, because there was nobody else to hand it to.</p>
+
+    <div class="events">
+      <div class="event">
+        <span class="size">500</span>
+        <div>
+          <h3>Air Max Day, with Nike and Titolo</h3>
+          <p>A sneaker-culture brand collaboration. The kind of activation that does not fit neatly into any one category.</p>
+        </div>
+      </div>
+      <div class="event">
+        <span class="size">300</span>
+        <div>
+          <h3>Labwear, one year</h3>
+          <p>The first anniversary. We produced a magazine for it.</p>
+        </div>
+      </div>
+      <div class="event">
+        <span class="size">400</span>
+        <div>
+          <h3>Labwear, two years</h3>
+          <p>Panel talk, exhibition and live screenprinting, plus a second magazine. <a href="https://youtu.be/hwQQk-V0Xqk">Watch it</a>.</p>
+        </div>
+      </div>
+      <div class="event">
+        <span class="size">500</span>
+        <div>
+          <h3>Labwear, three years</h3>
+          <p>Screenprinting, VR tours, panel talks, and a block party outside. <a href="https://youtu.be/2unXCJPxPn0">Watch it</a>.</p>
+        </div>
+      </div>
+      <div class="event">
+        <span class="size">PFW</span>
+        <div>
+          <h3>Paris Fashion Week SS25</h3>
+          <p>Our first showroom. <a href="https://youtu.be/KZVtJjAm5sU">Watch it</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top:clamp(26px,4vw,36px)">
+      The anniversary grew <strong>300 to 400 to 500</strong> across three consecutive years. That
+      progression is the point: it was a program that compounded, not three separate parties. I owned
+      <strong>scope, budget, vendors, on-site setup and breakdown, and the post-mortem</strong> on
+      every one.
     </p>
   </section>
 
@@ -437,9 +506,9 @@ footer{
       <h2>The receipts, in full.</h2>
     </div>
     <dl class="specs">
-      <div class="spec"><dt>Signature event format</dt><dd>"Not On The Guestlist" <span class="note">recurring, run across cities during fashion weeks</span></dd></div>
-      <div class="spec"><dt>Formats run end to end</dt><dd>Pop-ups · retail activations · launch parties · block parties</dd></div>
-      <div class="spec"><dt>Largest single activation</dt><dd>A few hundred people</dd></div>
+      <div class="spec"><dt>People through events</dt><dd>~1,700 <span class="note">across four events, plus a Paris Fashion Week showroom</span></dd></div>
+      <div class="spec"><dt>Largest single activation</dt><dd>500 <span class="note">Air Max Day with Nike and Titolo</span></dd></div>
+      <div class="spec"><dt>Formats run end to end</dt><dd>Brand collaborations · anniversaries · exhibitions · panels · block parties · showrooms</dd></div>
       <div class="spec"><dt>Organic audience built</dt><dd>150,000+ <span class="note">from zero</span></dd></div>
       <div class="spec"><dt>Paid media spent to do it</dt><dd><span class="hl">$0</span> <span class="note">no ads, no agency, no outside help</span></dd></div>
       <div class="spec"><dt>Launch funnel, month one</dt><dd>~20,000 signups <span class="note">memes, systematic, not one lucky post</span></dd></div>
