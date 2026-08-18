@@ -1,403 +1,202 @@
 <title>Mike for Nothing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Doto:wght@400;600;800&family=Martian+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Doto:wght@600;800&family=Martian+Mono:wght@400;600&display=swap">
 
 <style>
 /* =====================================================================
    Mike for Nothing
-   Single committed theme: a device screen. True black ground, one red.
-   Every colour painted explicitly so the page holds on any host ground.
+   A device screen. True black, one red. Single committed theme, every
+   colour painted explicitly so it holds on any host ground.
    ===================================================================== */
 
 :root{
   --void:   #000000;
-  --panel:  #0b0b0c;
-  --line:   #232426;
-  --line-2: #35373a;
+  --line:   #212225;
+  --line-2: #3a3c40;
   --ink:    #ffffff;
-  --dim:    #8a8d91;
+  --dim:    #929599;
   --dimmer: #86898d;
   --red:    #d71921;
 
-  --measure: 68ch;
-  --col: 1080px;
+  --measure: 60ch;
+  --col: 980px;
 
-  --step--1: clamp(.72rem, .68rem + .18vw, .8rem);
-  --step-0:  clamp(1rem, .96rem + .2vw, 1.09rem);
-  --step-1:  clamp(1.22rem, 1.1rem + .55vw, 1.6rem);
-  --step-2:  clamp(1.7rem, 1.4rem + 1.4vw, 2.7rem);
-  --step-3:  clamp(2.6rem, 1.8rem + 3.6vw, 5.4rem);
+  --s-0: clamp(1rem, .96rem + .2vw, 1.06rem);
+  --s-1: clamp(1.15rem, 1.05rem + .5vw, 1.5rem);
+  --s-2: clamp(1.6rem, 1.25rem + 1.5vw, 2.55rem);
+  --s-3: clamp(2.7rem, 1.7rem + 4.4vw, 6rem);
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-
 html{ -webkit-text-size-adjust:100%; }
 
 body{
   margin:0;
   background-color:var(--void);
   background-image:radial-gradient(var(--line) .5px, transparent .5px);
-  background-size:22px 22px;
+  background-size:24px 24px;
   color:var(--ink);
   font-family:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size:var(--step-0);
+  font-size:var(--s-0);
   line-height:1.55;
   overflow-x:hidden;
 }
 
-.wrap{
-  max-width:var(--col);
-  margin:0 auto;
-  padding:0 clamp(20px,5vw,48px);
-}
+.wrap{ max-width:var(--col); margin:0 auto; padding:0 clamp(20px,5vw,40px); }
 
-/* ---------- shared type ---------- */
 .eyebrow{
   font-family:"Martian Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.6rem;
-  font-weight:600;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--dimmer);
-  margin:0;
+  font-size:.58rem; font-weight:600;
+  letter-spacing:.24em; text-transform:uppercase;
+  color:var(--dimmer); margin:0;
 }
 
-h2{
-  font-size:var(--step-1);
-  font-weight:600;
-  letter-spacing:-.015em;
-  text-wrap:balance;
-  margin:.5rem 0 0;
-  color:var(--ink);
+.sec-title{
+  font-size:var(--s-2);
+  font-weight:600; letter-spacing:-.025em;
+  line-height:1.1; text-wrap:balance;
+  margin:.45rem 0 0; color:var(--ink);
+  max-width:18ch;
 }
 
 p{ margin:0; }
-
-section{ padding:clamp(48px,6.5vw,82px) 0; border-top:1px solid var(--line); }
-
-.sec-head{ margin-bottom:clamp(28px,4vw,44px); }
+section{ padding:clamp(44px,5.5vw,68px) 0; border-top:1px solid var(--line); }
+.sec-head{ margin-bottom:clamp(24px,3.2vw,34px); }
 
 /* ---------- glyph strip ---------- */
-.glyph{
-  height:3px;
-  width:100%;
-  background:var(--line);
-  border-radius:99px;
-  overflow:hidden;
-  position:relative;
-}
+.glyph{ height:3px; width:100%; background:var(--line); border-radius:99px; overflow:hidden; position:relative; }
 .glyph::after{
-  content:"";
-  position:absolute; inset:0;
+  content:""; position:absolute; inset:0;
   background:linear-gradient(90deg,transparent,var(--ink),transparent);
   transform:translateX(-100%);
-  animation:sweep 2.6s cubic-bezier(.4,0,.2,1) .2s infinite;
+  animation:sweep 2.8s cubic-bezier(.4,0,.2,1) .2s infinite;
 }
-@keyframes sweep{
-  0%{ transform:translateX(-100%); }
-  55%,100%{ transform:translateX(100%); }
-}
+@keyframes sweep{ 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(100%)} }
 
 /* ---------- hero ---------- */
-header{
-  padding:clamp(48px,9vw,110px) 0 clamp(40px,6vw,72px);
-}
+header{ padding:clamp(40px,7vw,84px) 0 clamp(34px,4.5vw,52px); }
 .hero-top{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px 28px;
-  justify-content:space-between;
-  align-items:baseline;
-  margin-bottom:clamp(36px,6vw,64px);
+  display:flex; flex-wrap:wrap; gap:10px 24px;
+  justify-content:space-between; align-items:baseline;
+  margin-bottom:clamp(30px,5vw,52px);
 }
-
 .name{
   font-family:"Doto",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-weight:800;
-  font-size:var(--step-3);
-  line-height:.94;
-  letter-spacing:.01em;
-  margin:0;
-  text-transform:uppercase;
-  color:var(--ink);
+  font-weight:800; font-size:var(--s-3);
+  line-height:.92; letter-spacing:.01em;
+  margin:0; text-transform:uppercase; color:var(--ink);
 }
 .name .red{ color:var(--red); }
 
 .tagline{
-  font-size:var(--step-1);
-  font-weight:400;
-  line-height:1.35;
-  letter-spacing:-.01em;
-  max-width:26ch;
-  margin:clamp(20px,3vw,30px) 0 0;
-  color:var(--ink);
-  text-wrap:balance;
+  font-size:var(--s-1); font-weight:400;
+  line-height:1.34; letter-spacing:-.012em;
+  max-width:30ch; margin:clamp(20px,2.6vw,28px) 0 0;
+  color:var(--ink); text-wrap:balance;
 }
+.tagline b{ font-weight:600; }
 
 .status{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:10px 18px;
-  margin-top:clamp(26px,4vw,38px);
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px;
+  margin-top:clamp(22px,3vw,30px);
   font-family:"Martian Mono",ui-monospace,monospace;
-  font-size:.6rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--dim);
+  font-size:.58rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--dim);
 }
 .status .sep{ color:var(--line-2); }
 .dot{
-  width:7px; height:7px;
-  border-radius:99px;
-  background:var(--red);
-  display:inline-block;
-  margin-right:8px;
-  vertical-align:middle;
+  width:7px; height:7px; border-radius:99px; background:var(--red);
+  display:inline-block; margin-right:8px; vertical-align:middle;
   animation:blink 2s steps(1,end) infinite;
 }
 @keyframes blink{ 0%,60%{opacity:1} 61%,100%{opacity:.25} }
 
-/* ---------- thesis ---------- */
-.thesis .lede{
-  font-size:var(--step-2);
-  font-weight:500;
-  line-height:1.22;
-  letter-spacing:-.02em;
-  max-width:20ch;
-  text-wrap:balance;
+/* ---------- range grid ---------- */
+.range{ border-top:1px solid var(--line); }
+.row{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:4px 28px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+  align-items:baseline;
 }
-.thesis .after{
-  font-size:var(--step-0);
-  font-weight:400;
-  line-height:1.6;
-  letter-spacing:0;
-  max-width:var(--measure);
-  color:var(--dim);
-  margin-top:clamp(24px,3vw,34px);
+.row .k{
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:.6rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--dimmer);
 }
-.thesis .after strong{ color:var(--ink); font-weight:600; }
+.row .v{
+  font-size:1.02rem; font-weight:500; color:var(--ink);
+  letter-spacing:-.01em;
+}
+.row .v em{ font-style:normal; color:var(--dim); font-weight:400; }
+.row .v .hl{ color:var(--red); }
 
-/* ---------- feature block ---------- */
-.feature .line{
-  font-size:var(--step-1);
-  font-weight:500;
-  line-height:1.3;
-  letter-spacing:-.015em;
-  max-width:30ch;
-  color:var(--ink);
-  text-wrap:balance;
-  margin-bottom:clamp(20px,3vw,28px);
-}
-.feature .body{
-  font-size:.98rem;
-  line-height:1.62;
-  color:var(--dim);
-  max-width:var(--measure);
-  margin-bottom:14px;
-}
-.feature .body:last-child{ margin-bottom:0; }
-.feature .body strong{ color:var(--ink); font-weight:600; }
-
-/* ---------- event list ---------- */
+/* ---------- events ---------- */
 .events{ border-top:1px solid var(--line); }
 .event{
   display:grid;
-  grid-template-columns:88px minmax(0,1fr);
-  gap:4px 24px;
-  padding:18px 0;
+  grid-template-columns:76px minmax(0,1fr);
+  gap:3px 22px;
+  padding:15px 0;
   border-bottom:1px solid var(--line);
   align-items:start;
 }
 .event .size{
   font-family:"Doto",ui-monospace,monospace;
-  font-weight:800;
-  font-size:1.7rem;
-  line-height:1;
-  color:var(--red);
-  font-variant-numeric:tabular-nums;
+  font-weight:800; font-size:1.5rem; line-height:1.05;
+  color:var(--red); font-variant-numeric:tabular-nums;
 }
-.event h3{
-  margin:0 0 4px;
-  font-size:1rem;
-  font-weight:600;
-  color:var(--ink);
-  letter-spacing:-.01em;
-}
-.event p{
-  font-size:.92rem;
-  line-height:1.55;
-  color:var(--dim);
-}
+.event h3{ margin:0 0 2px; font-size:.98rem; font-weight:600; color:var(--ink); letter-spacing:-.01em; }
+.event .d{ font-size:.9rem; line-height:1.5; color:var(--dim); }
 .event a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
 .event a:hover,.event a:focus-visible{ color:var(--red); border-color:var(--red); }
 
-@media (max-width:560px){
-  .event{ grid-template-columns:1fr; gap:6px; }
+.note-line{
+  font-size:.92rem; line-height:1.6; color:var(--dim);
+  max-width:var(--measure); margin-top:clamp(20px,2.6vw,28px);
 }
-
-/* ---------- spec sheet ---------- */
-.specs{
-  border-top:1px solid var(--line);
-}
-.spec{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
-  gap:6px 24px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  align-items:baseline;
-}
-.spec dt{
-  font-family:"Martian Mono",ui-monospace,monospace;
-  font-size:.58rem;
-  font-weight:400;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:var(--dimmer);
-}
-.spec dd{
-  margin:0;
-  font-size:.98rem;
-  font-weight:500;
-  color:var(--ink);
-  font-variant-numeric:tabular-nums;
-}
-.spec dd .note{ color:var(--dim); font-weight:400; }
-.spec dd .hl{ color:var(--red); }
-
-/* ---------- requirements ---------- */
-.reqs{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
-.req{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);
-  gap:10px 32px;
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-}
-.req .ask{
-  color:var(--dim);
-  font-size:.92rem;
-  line-height:1.5;
-}
-.req .ask::before{
-  content:"“";
-  color:var(--line-2);
-}
-.req .ask::after{
-  content:"”";
-  color:var(--line-2);
-}
-.req .ans{
-  font-size:.98rem;
-  line-height:1.55;
-  color:var(--ink);
-}
-.req .ans b{ font-weight:600; }
-.req .ans .num{ color:var(--red); font-weight:600; font-variant-numeric:tabular-nums; }
-
-/* ---------- plan ---------- */
-.plan{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-.phase{
-  background:var(--panel);
-  padding:clamp(22px,3vw,30px);
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-.phase .idx{
-  font-family:"Doto",ui-monospace,monospace;
-  font-weight:800;
-  font-size:1.9rem;
-  line-height:1;
-  color:var(--red);
-}
-.phase h3{
-  margin:0;
-  font-size:.95rem;
-  font-weight:600;
-  letter-spacing:.01em;
-  color:var(--ink);
-}
-.phase .when{
-  font-family:"Martian Mono",ui-monospace,monospace;
-  font-size:.56rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--dimmer);
-}
-.phase p{
-  font-size:.9rem;
-  line-height:1.55;
-  color:var(--dim);
-}
+.note-line b{ color:var(--ink); font-weight:600; }
 
 /* ---------- close ---------- */
-.close p.big{
-  font-size:var(--step-2);
-  font-weight:500;
-  line-height:1.24;
-  letter-spacing:-.02em;
-  max-width:22ch;
-  text-wrap:balance;
+.close-line{
+  font-size:var(--s-2); font-weight:500;
+  line-height:1.16; letter-spacing:-.025em;
+  max-width:19ch; text-wrap:balance; color:var(--ink);
 }
-.links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:clamp(28px,4vw,40px);
+.close-sub{
+  font-size:.98rem; line-height:1.6; color:var(--dim);
+  max-width:var(--measure); margin-top:clamp(18px,2.4vw,24px);
 }
+.close-sub b{ color:var(--ink); font-weight:600; }
+
+.links{ display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(26px,3.4vw,34px); }
 .btn{
-  display:inline-block;
-  padding:13px 22px;
-  border:1px solid var(--line-2);
-  border-radius:99px;
-  color:var(--ink);
-  text-decoration:none;
+  display:inline-block; padding:12px 20px;
+  border:1px solid var(--line-2); border-radius:99px;
+  color:var(--ink); text-decoration:none;
   font-family:"Martian Mono",ui-monospace,monospace;
-  font-size:.6rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  transition:background-color .18s ease, border-color .18s ease, color .18s ease;
+  font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
+  transition:background-color .18s ease,border-color .18s ease,color .18s ease;
 }
-.btn:hover,.btn:focus-visible{
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--void);
-}
-.btn.primary{
-  background:var(--red);
-  border-color:var(--red);
-  color:var(--ink);
-}
-.btn.primary:hover,.btn.primary:focus-visible{
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--void);
-}
+.btn:hover,.btn:focus-visible{ background:var(--ink); border-color:var(--ink); color:var(--void); }
+.btn.primary{ background:var(--red); border-color:var(--red); color:var(--ink); }
+.btn.primary:hover,.btn.primary:focus-visible{ background:var(--ink); border-color:var(--ink); color:var(--void); }
 a:focus-visible,.btn:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
 
 footer{
   border-top:1px solid var(--line);
-  padding:26px 0 40px;
-  color:var(--dimmer);
+  padding:22px 0 36px; color:var(--dimmer);
   font-family:"Martian Mono",ui-monospace,monospace;
-  font-size:.55rem;
-  letter-spacing:.1em;
-  line-height:1.9;
+  font-size:.54rem; letter-spacing:.1em; line-height:1.9;
   text-transform:uppercase;
 }
 
-/* ---------- load sequence ---------- */
-.rise{ opacity:0; transform:translateY(14px); animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards; }
-.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+/* ---------- load ---------- */
+.rise{ opacity:0; transform:translateY(12px); animation:rise .65s cubic-bezier(.2,.7,.3,1) forwards; }
+.d1{animation-delay:.05s}.d2{animation-delay:.14s}.d3{animation-delay:.23s}
 @keyframes rise{ to{ opacity:1; transform:none; } }
 
 @media (prefers-reduced-motion:reduce){
@@ -405,9 +204,9 @@ footer{
   .rise{ opacity:1; transform:none; }
 }
 
-@media (max-width:680px){
-  .spec{ grid-template-columns:1fr; gap:3px; padding:12px 0; }
-  .req{ grid-template-columns:1fr; gap:8px; }
+@media (max-width:600px){
+  .row{ grid-template-columns:1fr; gap:2px; padding:13px 0; }
+  .event{ grid-template-columns:1fr; gap:4px; }
 }
 </style>
 
@@ -415,7 +214,7 @@ footer{
 
   <header>
     <div class="hero-top">
-      <p class="eyebrow">Application · Marketing Manager, US Marketing</p>
+      <p class="eyebrow">Application · Marketing Manager, US</p>
       <p class="eyebrow">New York · 2026</p>
     </div>
 
@@ -423,7 +222,9 @@ footer{
 
     <h1 class="name rise d1">Michael<br>Mangold<span class="red">.</span></h1>
 
-    <p class="tagline rise d2">I build the kind of demand you cannot buy.</p>
+    <p class="tagline rise d2">
+      Six years, four companies, and <b>every part of marketing</b>. Usually with nobody to hand it to.
+    </p>
 
     <p class="status rise d3">
       <span><span class="dot"></span>Available now</span>
@@ -434,182 +235,108 @@ footer{
     </p>
   </header>
 
-  <section class="thesis">
+  <section>
     <div class="sec-head">
-      <p class="eyebrow">The problem I would be hired to solve</p>
+      <p class="eyebrow">The range</p>
+      <h2 class="sec-title">I have done all of it.</h2>
     </div>
-    <p class="lede">Nothing is in 500+ Best Buy doors and in zero carrier stores.</p>
-    <p class="after">
-      No Verizon, no AT&amp;T, no T-Mobile. So US growth cannot be pushed through distribution,
-      the way every competitor pushes theirs. It has to be <strong>pulled</strong> through by people
-      who already wanted the product before they walked into the store.
-      That is the only kind of growth I have ever built, and it is the reason I am writing.
-    </p>
+
+    <div class="range">
+      <div class="row">
+        <p class="k">Events &amp; activations</p>
+        <p class="v">~1,700 people across four events <em>Nike x Titolo, and Paris Fashion Week SS25</em></p>
+      </div>
+      <div class="row">
+        <p class="k">Organic growth</p>
+        <p class="v">0 to 150,000 followers <em>on <span class="hl">$0</span> of paid media, no agency</em></p>
+      </div>
+      <div class="row">
+        <p class="k">Launch</p>
+        <p class="v">~20,000 signups in month one <em>memes, systematic, not one lucky post</em></p>
+      </div>
+      <div class="row">
+        <p class="k">Revenue</p>
+        <p class="v">$1M ARR <em>built on that audience, by 2024</em></p>
+      </div>
+      <div class="row">
+        <p class="k">Production</p>
+        <p class="v">Garments for Vogue, at 21 <em>after their own factory could not solve it</em></p>
+      </div>
+      <div class="row">
+        <p class="k">Retail</p>
+        <p class="v">Two years on a Nike shop floor <em>where a launch gets judged honestly</em></p>
+      </div>
+      <div class="row">
+        <p class="k">On the record</p>
+        <p class="v">Forbes 30 Under 30 <em>· Hult Prize, $100k, top 6 of 200,000 · BSc Electrical Engineering, ETH Zürich</em></p>
+      </div>
+    </div>
   </section>
 
-  <section class="feature">
+  <section>
     <div class="sec-head">
-      <p class="eyebrow">The work this role is actually about</p>
-      <h2>1,700 people. Four events. No playbook.</h2>
+      <p class="eyebrow">Proof</p>
+      <h2 class="sec-title">Four rooms I filled.</h2>
     </div>
-    <p class="line">Every one of them built from nothing, because there was nobody else to hand it to.</p>
 
     <div class="events">
       <div class="event">
         <span class="size">500</span>
         <div>
           <h3>Air Max Day, with Nike and Titolo</h3>
-          <p>A sneaker-culture brand collaboration. The kind of activation that does not fit neatly into any one category.</p>
+          <p class="d">A sneaker-culture collaboration. The kind of thing that fits no category and works anyway.</p>
         </div>
       </div>
       <div class="event">
         <span class="size">300</span>
         <div>
           <h3>Labwear, one year</h3>
-          <p>The first anniversary. We produced a magazine for it.</p>
+          <p class="d">The first anniversary. We wrote and printed a magazine for it.</p>
         </div>
       </div>
       <div class="event">
         <span class="size">400</span>
         <div>
           <h3>Labwear, two years</h3>
-          <p>Panel talk, exhibition and live screenprinting, plus a second magazine. <a href="https://youtu.be/hwQQk-V0Xqk">Watch it</a>.</p>
+          <p class="d">Panel talk, exhibition, live screenprinting, second magazine. <a href="https://youtu.be/hwQQk-V0Xqk">Watch it</a>.</p>
         </div>
       </div>
       <div class="event">
         <span class="size">500</span>
         <div>
           <h3>Labwear, three years</h3>
-          <p>Screenprinting, VR tours, panel talks, and a block party outside. <a href="https://youtu.be/2unXCJPxPn0">Watch it</a>.</p>
+          <p class="d">Screenprinting, VR tours, panel talks, block party. <a href="https://youtu.be/2unXCJPxPn0">Watch it</a>.</p>
         </div>
       </div>
       <div class="event">
         <span class="size">PFW</span>
         <div>
           <h3>Paris Fashion Week SS25</h3>
-          <p>Our first showroom. <a href="https://youtu.be/KZVtJjAm5sU">Watch it</a>.</p>
+          <p class="d">Our first showroom. <a href="https://youtu.be/KZVtJjAm5sU">Watch it</a>.</p>
         </div>
       </div>
     </div>
 
-    <p class="body" style="margin-top:clamp(26px,4vw,36px)">
-      The anniversary grew <strong>300 to 400 to 500</strong> across three consecutive years. That
-      progression is the point: it was a program that compounded, not three separate parties. I owned
-      <strong>scope, budget, vendors, on-site setup and breakdown, and the post-mortem</strong> on
-      every one.
+    <p class="note-line">
+      The anniversary went <b>300, then 400, then 500</b>, three years running. That progression is the
+      part I would point at: a program that compounded, not three separate parties. I owned scope,
+      budget, vendors, setup and breakdown, and the post-mortem on every one.
     </p>
   </section>
 
   <section>
     <div class="sec-head">
-      <p class="eyebrow">Specification</p>
-      <h2>The receipts, in full.</h2>
+      <p class="eyebrow">Why you</p>
     </div>
-    <dl class="specs">
-      <div class="spec"><dt>People through events</dt><dd>~1,700 <span class="note">across four events, plus a Paris Fashion Week showroom</span></dd></div>
-      <div class="spec"><dt>Largest single activation</dt><dd>500 <span class="note">Air Max Day with Nike and Titolo</span></dd></div>
-      <div class="spec"><dt>Formats run end to end</dt><dd>Brand collaborations · anniversaries · exhibitions · panels · block parties · showrooms</dd></div>
-      <div class="spec"><dt>Organic audience built</dt><dd>150,000+ <span class="note">from zero</span></dd></div>
-      <div class="spec"><dt>Paid media spent to do it</dt><dd><span class="hl">$0</span> <span class="note">no ads, no agency, no outside help</span></dd></div>
-      <div class="spec"><dt>Launch funnel, month one</dt><dd>~20,000 signups <span class="note">memes, systematic, not one lucky post</span></dd></div>
-      <div class="spec"><dt>Revenue built on top of it</dt><dd>$1M ARR <span class="note">Labwear Studios, by 2024</span></dd></div>
-      <div class="spec"><dt>Years founding companies</dt><dd>6 <span class="note">four companies, first one at 18</span></dd></div>
-      <div class="spec"><dt>Recognition</dt><dd>Forbes 30 Under 30 <span class="note">Switzerland</span></dd></div>
-      <div class="spec"><dt>Competition</dt><dd>Hult Prize, $100,000 won <span class="note">top 6 of 200,000 entrants</span></dd></div>
-      <div class="spec"><dt>Client work at 21</dt><dd>Vogue <span class="note">produced the garments shown at Paris Fashion Week, after their own factory could not solve it</span></dd></div>
-      <div class="spec"><dt>Time on a retail floor</dt><dd>2 years <span class="note">Nike, selling product to real people</span></dd></div>
-      <div class="spec"><dt>Project management stack</dt><dd>Monday · Airtable · Notion</dd></div>
-      <div class="spec"><dt>Advisory</dt><dd>Ambouras <span class="note">two months, before the company went to Y Combinator</span> · Resonance Brands</dd></div>
-      <div class="spec"><dt>Education</dt><dd>BSc Electrical Engineering <span class="note">ETH Zürich</span></dd></div>
-      <div class="spec"><dt>Languages</dt><dd>EN, DE <span class="note">native</span> · FR, ES <span class="note">professional</span></dd></div>
-    </dl>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <p class="eyebrow">Your posting, answered line by line</p>
-      <h2>Nothing here is a stretch.</h2>
-    </div>
-    <div class="reqs">
-
-      <div class="req">
-        <p class="ask">5+ years of project management experience in consumer tech or fast-moving environments</p>
-        <p class="ans">Six years founding consumer brands. I was the project manager on every launch, because there was nobody else to hand it to. Scope, timeline, budget, vendors, post-mortem.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Founding-team mentality with comfort navigating ambiguity</p>
-        <p class="ans">Four companies since 18. Two reached real revenue before I had a job title that meant anything. I have never once inherited a process.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Own the US campus marketing program end-to-end, including strategy and university negotiations</p>
-        <p class="ans">Students are the one US segment that buys a phone <b>unlocked</b>, with no carrier subsidy deciding for them. Campus is not a nice-to-have here, it is the way around the carrier gap. I built a <span class="num">150,000</span> person audience in exactly that age bracket, and I am two exams from an engineering degree. I have been the customer.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Manage on-site event logistics, vendor coordination, and setup/breakdown</p>
-        <p class="ans">Pop-ups, retail activations, launch parties, warehouse block parties and fashion-week programming, owned end to end including setup and breakdown. Plus five years of cross-border production where a missed date means no product, and two years on a Nike floor. A launch is judged by what happens in the room, not in the deck.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Coordinate across US marketing, influencer, PR, and events teams</p>
-        <p class="ans">Directed a three-person creative team across production, creative and editing on a continuous release schedule, while running partnerships and sales myself.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Project management software proficiency</p>
-        <p class="ans">Monday, Airtable and Notion, used to actually run launches rather than to look organised in an interview.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Generate leadership reports on project health and risks</p>
-        <p class="ans">Reported to cofounders, investors and a board for six years. The engineering degree means the analysis is mine, not a dashboard someone hands me.</p>
-      </div>
-
-      <div class="req">
-        <p class="ask">Agency experience preferred</p>
-        <p class="ans">I have never worked at an agency. I have been the client, the agency and the intern at the same time, on every launch I have ever run.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <p class="eyebrow">If you hire me</p>
-      <h2>The first ninety days.</h2>
-    </div>
-    <div class="plan">
-      <div class="phase">
-        <span class="idx">01</span>
-        <span class="when">Day 0 to 30</span>
-        <h3>Learn the floor</h3>
-        <p>Walk every Best Buy in the five boroughs. Ask the blue shirts what they actually say when someone picks up a Phone (3). Audit every US touchpoint we control. Ship the first weekly project health report by day ten.</p>
-      </div>
-      <div class="phase">
-        <span class="idx">02</span>
-        <span class="when">Day 31 to 60</span>
-        <h3>One campus, proven</h3>
-        <p>Pick a single New York school. Run one activation format end to end, with a real budget, a real negotiation and a real post-mortem. Measured on signups and sell-through. Not impressions.</p>
-      </div>
-      <div class="phase">
-        <span class="idx">03</span>
-        <span class="when">Day 61 to 90</span>
-        <h3>Make it a kit</h3>
-        <p>Turn what worked into a playbook the next campus can run without me in the room. Then run ten of them. A program, not a set of one-off events.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="close">
-    <div class="sec-head">
-      <p class="eyebrow">Next</p>
-    </div>
-    <p class="big">I am in New York, and I am available now.</p>
+    <p class="close-line">Nothing sold equity to its own users.</p>
+    <p class="close-sub">
+      That only works if people want in before you ask them to. I have spent six years building
+      exactly that kind of demand, with no budget to buy it and no playbook to follow, which your
+      posting says I would not be inheriting here either. <b>I am in New York and available now.</b>
+    </p>
     <div class="links">
       <a class="btn primary" href="mailto:mike@mike9ine.com?subject=Marketing%20Manager%2C%20US%20Marketing">Email me</a>
-      <a class="btn" href="https://mike9ine.github.io/nothing/cv.pdf">Download CV</a>
+      <a class="btn" href="https://mike9ine.github.io/nothing/cv.pdf">CV</a>
       <a class="btn" href="https://linkedin.com/in/mikenine">LinkedIn</a>
     </div>
   </section>
