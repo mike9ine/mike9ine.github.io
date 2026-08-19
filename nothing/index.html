@@ -203,6 +203,29 @@ header{ padding:clamp(40px,7vw,84px) 0 clamp(34px,4.5vw,52px); }
   background-size:100% 100%;
   pointer-events:none;
 }
+.mag-btn{
+  display:inline-block;
+  margin-top:clamp(20px, 2.4vw, 28px);
+  padding:17px 32px;
+  background:#000000;
+  border:1px solid #000000;
+  border-radius:99px;
+  color:#ffffff;
+  text-decoration:none;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:background-color .18s ease, border-color .18s ease;
+}
+.mag-btn:hover,.mag-btn:focus-visible{
+  background:var(--red);
+  border-color:var(--red);
+  color:#ffffff;
+}
+.mag-btn:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+
 .mag .cap{
   margin-top:clamp(22px,3vw,30px);
   font-family:"Martian Mono",ui-monospace,monospace;
@@ -411,10 +434,8 @@ footer{
     </div>
     <div class="mag">
       <p class="q">Alright Labwear, how the fuck are a bunch of 20 something year olds gonna reinvent an entire <span class="circled">industry?</span></p>
-      <p class="cap">
-        All Access, Issue 2 · written, designed and printed by us ·
-        <a href="https://mike9ine.github.io/nothing/labwear-magazine.pdf">Read it</a>
-      </p>
+      <p class="cap">All Access, Issue 2 · written, designed and printed by us</p>
+      <a class="mag-btn" href="https://mike9ine.github.io/nothing/labwear-magazine.pdf">Read the magazine</a>
     </div>
     <p class="answer">We asked it in print in 2024. Then we went and did it. And I ain't done.</p>
   </section>
