@@ -150,6 +150,9 @@ header{ padding:clamp(40px,7vw,84px) 0 clamp(34px,4.5vw,52px); }
 .row .v em{ font-style:normal; color:var(--dim); font-weight:400; }
 .row .v .hl{ color:var(--red); }
 
+.lnk{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2); }
+.lnk:hover,.lnk:focus-visible{ color:var(--red); border-color:var(--red); }
+
 /* ---------- events ---------- */
 .events{ border-top:1px solid var(--line); }
 .event{
@@ -175,6 +178,39 @@ header{ padding:clamp(40px,7vw,84px) 0 clamp(34px,4.5vw,52px); }
   max-width:var(--measure); margin-top:clamp(20px,2.6vw,28px);
 }
 .note-line b{ color:var(--ink); font-weight:600; }
+
+/* ---------- magazine pull-quote ---------- */
+.mag{
+  background:#ffffff;
+  color:#000000;
+  padding:clamp(26px,4vw,46px) clamp(24px,4vw,44px) clamp(30px,4.4vw,52px);
+}
+.mag .q{
+  font-size:clamp(1.5rem, 0.85rem + 3.1vw, 3rem);
+  font-weight:700;
+  line-height:1.04;
+  letter-spacing:-.032em;
+  max-width:15ch;
+  color:#000000;
+}
+.circled{ position:relative; display:inline-block; }
+.circled::after{
+  content:"";
+  position:absolute;
+  left:-7%; top:-12%;
+  width:114%; height:124%;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'><path d='M104 7 C44 5 9 27 8 50 C7 75 48 95 106 94 C162 93 193 71 192 48 C191 26 156 8 94 9 C68 10 42 17 27 31' fill='none' stroke='%23d71921' stroke-width='3.2' stroke-linecap='round'/></svg>") no-repeat center;
+  background-size:100% 100%;
+  pointer-events:none;
+}
+.mag .cap{
+  margin-top:clamp(22px,3vw,30px);
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
+  color:#55585c; line-height:1.9;
+}
+.mag .cap a{ color:#000; text-decoration:none; border-bottom:1px solid #b9bcc0; }
+.mag .cap a:hover,.mag .cap a:focus-visible{ color:var(--red); border-color:var(--red); }
 
 /* ---------- close ---------- */
 .close-line{
@@ -277,11 +313,11 @@ footer{
     <div class="range">
       <div class="row">
         <p class="k">Events &amp; activations</p>
-        <p class="v">~1,700 people across four events <em>Nike x Titolo, and Paris Fashion Week SS25</em></p>
+        <p class="v">~1,700 people across four events <em>Nike x Titolo, and Paris Fashion Week SS25 · <a class="lnk" href="https://www.youtube.com/@LabwearStudios">on film</a></em></p>
       </div>
       <div class="row">
         <p class="k">Organic growth</p>
-        <p class="v">0 to 150,000 followers <em>on <span class="hl">$0</span> of paid media, no agency</em></p>
+        <p class="v">0 to 150,000 followers <em>on <span class="hl">$0</span> of paid media, no agency · <a class="lnk" href="https://www.instagram.com/labwearstudios/">@labwearstudios</a></em></p>
       </div>
       <div class="row">
         <p class="k">Launch</p>
@@ -359,6 +395,19 @@ footer{
 
   <section>
     <div class="sec-head">
+      <p class="eyebrow">We also published a magazine</p>
+    </div>
+    <div class="mag">
+      <p class="q">Alright Labwear, how the fuck are a bunch of 20 something year olds gonna reinvent an entire <span class="circled">industry?</span></p>
+      <p class="cap">
+        All Access, Issue 2 · written, designed and printed by us ·
+        <a href="https://mike9ine.github.io/nothing/labwear-magazine.pdf">Read it</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
       <p class="eyebrow">Why you</p>
     </div>
     <p class="close-line">Nothing sold equity to its own users.</p>
@@ -370,6 +419,7 @@ footer{
     <div class="links">
       <a class="btn primary" href="mailto:mike@mike9ine.com?subject=Marketing%20Manager%2C%20US%20Marketing">Email me</a>
       <a class="btn" href="https://mike9ine.github.io/nothing/cv.pdf">CV</a>
+      <a class="btn" href="https://mike9ine.github.io/nothing/labwear-magazine.pdf">The magazine</a>
       <a class="btn" href="https://linkedin.com/in/mikenine">LinkedIn</a>
     </div>
   </section>
